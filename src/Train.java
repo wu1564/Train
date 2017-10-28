@@ -9,11 +9,11 @@ public class Train {
     public static void main(String args[]) {
         String jsonDataTest = GSON.toJson(STUDENT);
         System.out.println(jsonDataTest);
-        analysizeJson(jsonDataTest);
+        analyzeJson(jsonDataTest);
     }
 
     //解析json
-    public static void analysizeJson(String jsonDataTest) {
+    public static void analyzeJson(String jsonDataTest) {
         String json;
         json = jsonDataTest;
         NewStudent = GSON.fromJson(json, STUDENT.getClass());
