@@ -3,20 +3,20 @@ import com.google.gson.Gson;
 public class Train {
     private static final Student STUDENT = new Student("你好", "18");
     private static final Gson GSON = new Gson();
-    private static Student Newstudent = new Student();
+    private static Student NewStudent = new Student();
 
-    //建json
+    //建構json
     public static void main(String args[]) {
-        String jsondatatest = GSON.toJson(STUDENT);
-        System.out.println(jsondatatest);
-        json(jsondatatest);
+        String jsonDataTest = GSON.toJson(STUDENT);
+        System.out.println(jsonDataTest);
+        analysizeJson(jsonDataTest);
     }
 
-    //解析
-    public static void json(String jsondatatest) {
+    //解析json
+    public static void analysizeJson(String jsonDataTest) {
         String json;
-        json = jsondatatest;
-        Newstudent = GSON.fromJson(json, STUDENT.getClass());
-        System.out.println(Newstudent.name + "\n" + Newstudent.age);
+        json = jsonDataTest;
+        NewStudent = GSON.fromJson(json, STUDENT.getClass());
+        System.out.println(NewStudent.name + "\n" + NewStudent.age);
     }
 }
