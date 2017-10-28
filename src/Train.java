@@ -1,23 +1,22 @@
 import com.google.gson.Gson;
 
 public class Train {
-    private static final Student Student = new Student("你好", "18");
-    private static final Gson gson = new Gson();
-    private static String jsondatatest = gson.toJson(Student);
-    private static Student Newobject = new Student();
+    private static final Student STUDENT = new Student("你好", "18");
+    private static final Gson GSON = new Gson();
+    private static Student Newstudent = new Student();
 
     //建json
     public static void main(String args[]) {
+        String jsondatatest = GSON.toJson(STUDENT);
         System.out.println(jsondatatest);
         json(jsondatatest);
     }
 
     //解析
-    public static void json(String a_json) {
-
+    public static void json(String jsondatatest) {
         String json;
-        json = a_json;
-        Newobject = gson.fromJson(json, Student.getClass());
-        System.out.println(Newobject.name + "\n" + Newobject.age);
+        json = jsondatatest;
+        Newstudent = GSON.fromJson(json, STUDENT.getClass());
+        System.out.println(Newstudent.name + "\n" + Newstudent.age);
     }
 }
